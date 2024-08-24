@@ -1,0 +1,60 @@
+/* Cor de fundo personalizada para o header */
+.custom-header {
+    background-color: #111111; /* Cor de fundo */
+}
+
+/* Estilo personalizado para a logo */
+.custom-logo {
+    max-width: 680px; /* Define o tamanho máximo da largura da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilos personalizados para a página de postagem */
+.custom-header {
+    background-color: #111111; /* Cor de fundo */
+}
+
+.custom-logo {
+    max-width: 680px; /* Define o tamanho máximo da largura da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.custom-menu {
+    background-color: #1D1D1D; /* Cor de fundo do menu */
+    padding: 10px 0; /* Espaçamento vertical do menu */
+}
+
+.custom-menu .nav-link {
+    color: #ffffff; /* Cor do texto dos links */
+    margin: 0 15px; /* Espaçamento horizontal entre os links */
+    font-size: 16px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Texto em maiúsculas */
+}
+
+.custom-menu .nav-link:hover {
+    color: #cccccc; /* Cor do texto ao passar o mouse */
+    text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+}
+
+main {
+    padding: 20px;
+}
+
+form .form-label {
+    font-weight: bold;
+}
+    
+/* Responsividade */
+@media (max-width: 768px) {
+    .custom-logo {
+        max-width: 100%; /* Ajusta o tamanho da logo para caber na tela do celular */
+    }
+    .custom-menu .nav-link {
+        font-size: 14px; /* Reduz o tamanho da fonte nos dispositivos móveis */
+        margin: 5px 0; /* Reduz o espaçamento entre links no celular */
+    }
+    .custom-logo {
+        max-width: 470px;
+        height: auto;
+    }
+}

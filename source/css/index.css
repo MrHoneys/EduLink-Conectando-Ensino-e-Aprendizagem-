@@ -1,0 +1,382 @@
+/* Importar fontes */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte padrão */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove espaçamento padrão */
+}
+
+/* Cor de fundo personalizada para o header */
+.custom-header {
+    background: linear-gradient(135deg, #111, #333); /* Gradiente de fundo */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+}
+
+/* Estilo personalizado para a logo */
+.custom-logo {
+    max-width: 680px; /* Tamanho máximo da largura da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para o menu */
+.custom-menu {
+    background-color: #222; /* Cor de fundo do menu */
+    padding: 10px 0; /* Espaçamento vertical do menu */
+    border-bottom: 2px solid #333; /* Borda inferior para separar do conteúdo */
+}
+
+.custom-menu .nav-link {
+    color: #e0e0e0; /* Cor do texto dos links */
+    margin: 5px 10px; /* Ajusta o espaçamento para ser mais responsivo */
+    font-size: 16px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    transition: color 0.3s, background-color 0.3s; /* Transições suaves */
+}
+
+.custom-menu .nav-link:hover {
+    color: #fff; /* Cor do texto ao passar o mouse */
+    background-color: #333; /* Cor de fundo ao passar o mouse */
+    border-radius: 4px; /* Bordas arredondadas ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado ao passar o mouse */
+}
+
+/* Estilo para os cards */
+.card {
+    border-radius: 12px; /* Bordas mais arredondadas dos cards */
+    overflow: hidden; /* Garante que o conteúdo não saia dos limites do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa para profundidade */
+    transition: box-shadow 0.3s, transform 0.3s; /* Transição suave para sombra e transformação */
+    border: 1px solid #ddd; /* Borda leve para destaque */
+    background: #fff; /* Fundo branco para os cards */
+    margin: 0 auto; /* Centraliza os cards */
+    max-width: 100%; /* Garante que os cards não excedam o tamanho do container */
+}
+
+/* Efeito de hover para os cards */
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+    transform: scale(1.02); /* Leve aumento ao passar o mouse */
+}
+
+/* Imagem de capa */
+.activity-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0; /* Bordas arredondadas superiores */
+    height: auto; /* Permite que a altura se ajuste conforme a imagem */
+    background: #f0f0f0; /* Cor de fundo para imagem de capa */
+}
+
+.activity-cover img {
+    width: 100%; /* Largura total do container */
+    height: auto; /* Altura automática para manter a proporção */
+    object-fit: cover; /* Ajusta a imagem para cobrir o container */
+}
+
+/* Estilo para as imagens e vídeos no feed */
+.custom-media {
+    width: 100%; /* Largura total do container */
+    height: auto; /* Altura automática para manter a proporção */
+    max-width: 100%; /* Largura máxima */
+    border-radius: 8px; /* Bordas arredondadas para um visual mais moderno */
+    margin: 10px 0; /* Ajusta o espaçamento */
+    transition: transform 0.3s; /* Transição suave */
+}
+
+.custom-media:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Estilo do corpo do card */
+.card-body {
+    padding: 20px; /* Espaçamento interno do corpo do card */
+    position: relative; /* Necessário para posicionar elementos relativos no card */
+    display: flex;
+    flex-direction: column; /* Faz o corpo do card se ajustar verticalmente */
+}
+
+/* Estilo para o título e a legenda */
+.card-title {
+    font-size: 1.25rem; /* Tamanho menor para o título */
+    font-weight: 700; /* Negrito para o título */
+    margin-bottom: 5px; /* Menos espaçamento inferior */
+    font-family: 'Roboto', sans-serif; /* Fonte diferenciada para o título */
+}
+
+.card-subtitle {
+    font-size: 0.875rem; /* Tamanho menor para a legenda */
+    color: #888; /* Cor da legenda */
+    margin-bottom: 10px; /* Menos espaçamento inferior */
+    font-family: 'Roboto', sans-serif; /* Fonte diferenciada para a legenda */
+}
+
+/* Adiciona uma divisória estilizada entre a legenda e o texto */
+.card-body:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)); /* Linha pontilhada com gradiente */
+    margin: 15px 0; /* Espaçamento ao redor da divisória */
+}
+
+/* Estilo para a descrição */
+.card-text {
+    font-size: 1rem; /* Tamanho da fonte para a descrição */
+    font-family: 'Open Sans', sans-serif; /* Fonte padrão para o corpo do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+/* Estilo para o formulário de pesquisa */
+.search-container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 15px; /* Aumenta o padding para um visual mais espaçoso */
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-container .form-control {
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.search-container .btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 0.875rem; /* Tamanho da fonte menor para botões */
+}
+
+.search-container .btn-primary {
+    background-color: #007bff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-container .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para o modal de imagem */
+.modal-content {
+    border-radius: 12px; /* Bordas arredondadas para o modal */
+    padding: 20px; /* Espaçamento interno do modal */
+}
+
+.modal-body {
+    text-align: center; /* Alinhamento centralizado para a imagem */
+    padding: 0; /* Remove o padding interno */
+}
+
+.modal-body img {
+    max-width: 100%; /* Limita a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+}
+
+/* Estilo para o botão de fechar o modal */
+.btn-close {
+    filter: invert(1); /* Muda a cor do ícone de fechar para branco */
+}
+
+/* Estilo para o botão de comentar */
+.btn-primary {
+    border-radius: 8px; /* Bordas arredondadas para o botão de comentar */
+}
+
+/* Estilo para os comentários */
+.card-body .border {
+    background: #f8f9fa; /* Fundo claro para os comentários */
+    border: 1px solid #ddd; /* Borda leve ao redor dos comentários */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar os comentários */
+}
+
+.card-body .border strong {
+    display: block; /* Exibe o nome do aluno em linha separada */
+    font-size: 0.875rem; /* Tamanho menor para o nome do aluno */
+    color: #555; /* Cor do nome do aluno */
+}
+
+/* Estilo para o overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1050;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay.closed {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Estilo para o conteúdo do overlay */
+.overlay-content {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    max-height: calc(80vh - 60px);
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.overlay-content.closed {
+    transform: scale(0.95);
+}
+
+.overlay-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Estilo para o botão de fechar o overlay */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para a seção de comentários */
+.comments-container {
+    margin-bottom: 20px;
+    max-height: 300px; /* Altura máxima para o container de comentários */
+    overflow-y: auto;
+    padding-right: 10px; /* Ajusta o padding para adicionar espaço para a rolagem */
+}
+
+/* Estilo para os comentários */
+.comments-container .comment {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.comments-container .comment:last-child {
+    border-bottom: none;
+}
+
+/* Estilo para o formulário de comentário */
+.comment-form {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    z-index: 1;
+    border-radius: 12px 12px 0 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o campo de comentário */
+.comment-form textarea {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    resize: none; /* Remove a capacidade de redimensionar o textarea */
+}
+
+/* Estilo para o botão de enviar comentário */
+.comment-form .btn-primary {
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.comment-form .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes de estilo para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .custom-menu .nav-link {
+        font-size: 14px; /* Tamanho da fonte menor em telas pequenas */
+        margin: 5px; /* Ajusta o espaçamento dos links */
+    }
+
+    .search-container {
+        padding: 10px; /* Ajusta o padding em telas pequenas */
+        max-width: 100%; /* Largura total em telas pequenas */
+    }
+
+    .card {
+        margin: 10px; /* Adiciona margem para cards em telas pequenas */
+    }
+
+    .overlay-content {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .comment-form {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-menu .nav-link {
+        font-size: 12px; /* Ajusta o tamanho da fonte em telas muito pequenas */
+        margin: 2px; /* Reduz o espaçamento dos links */
+    }
+
+    .search-container .form-control {
+        font-size: 14px; /* Tamanho da fonte menor para campos de entrada em telas pequenas */
+    }
+
+    .comment-btn-fixed {
+        bottom: 10px; /* Ajusta a posição em telas menores */
+        right: 10px;
+        padding: 10px 20px; /* Ajusta o padding */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
