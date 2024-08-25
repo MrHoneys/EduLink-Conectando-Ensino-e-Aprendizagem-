@@ -12,6 +12,8 @@ require_once 'config/config.php';
 
 // Processar o filtro de pesquisa
 $searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
+$startDate = isset($_GET['start_date']) ? $_GET['start_date'] : '';
+$endDate = isset($_GET['end_date']) ? $_GET['end_date'] : '';
 
 // Construir a consulta SQL com base no filtro de pesquisa
 $sql = "SELECT id, nome, descricao, video, imagem, data_hora FROM atividades WHERE 1=1";
@@ -19,6 +21,12 @@ $sql = "SELECT id, nome, descricao, video, imagem, data_hora FROM atividades WHE
 if ($searchQuery) {
     $searchQueryEscaped = $conn->real_escape_string($searchQuery);
     $sql .= " AND (nome LIKE '%$searchQueryEscaped%' OR descricao LIKE '%$searchQueryEscaped%')";
+}
+
+if ($startDate && $endDate) {
+    $startDateEscaped = $conn->real_escape_string($startDate);
+    $endDateEscaped = $conn->real_escape_string($endDate);
+    $sql .= " AND DATE(data_hora) BETWEEN '$startDateEscaped' AND '$endDateEscaped'";
 }
 
 $sql .= " ORDER BY data_hora DESC";
@@ -38,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($atividade_id && $aluno_nome && $comentario) {
         $sql_insert = "INSERT INTO comentarios (atividade_id, aluno_nome, comentario, data_hora) VALUES ('$atividade_id', '$aluno_nome', '$comentario', '$data_hora')";
         if ($conn->query($sql_insert) === TRUE) {
-            header("Location: index.php?search=" . urlencode($searchQuery)); // Redireciona para recarregar os comentários
+            header("Location: index.php?search=" . urlencode($searchQuery) . "&start_date=" . urlencode($startDate) . "&end_date=" . urlencode($endDate)); // Redireciona para recarregar os comentários
             exit();
         } else {
             echo "<p>Erro: " . $conn->error . "</p>";
@@ -88,13 +96,13 @@ function get_comments($atividade_id) {
                     <a class="nav-link" href="index.php">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pages/student/student_postar_atividade.php">Publicar Tarefa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="config/validacao/logout.php">Sair</a>
                 </li>
             </ul>
         </div>
@@ -102,9 +110,11 @@ function get_comments($atividade_id) {
 
     <!-- Filtro de Pesquisa -->
     <section class="search-container">
-        <form method="GET" class="d-flex">
-            <input type="text" name="search" class="form-control" placeholder="Pesquisar por nome ou descrição" value="<?php echo htmlspecialchars($searchQuery); ?>">
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
+        <form method="GET" class="d-flex flex-column flex-md-row">
+            <input type="text" name="search" class="form-control mb-2 mb-md-0" placeholder="Pesquisar por nome ou descrição" value="<?php echo htmlspecialchars($searchQuery); ?>">
+            <input type="date" name="start_date" class="form-control mb-2 mb-md-0 ms-md-2" value="<?php echo htmlspecialchars($startDate); ?>">
+            <input type="date" name="end_date" class="form-control mb-2 mb-md-0 ms-md-2" value="<?php echo htmlspecialchars($endDate); ?>">
+            <button type="submit" class="btn btn-primary ms-md-2">Pesquisar</button>
         </form>
     </section>
 
@@ -173,5 +183,4 @@ function get_comments($atividade_id) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

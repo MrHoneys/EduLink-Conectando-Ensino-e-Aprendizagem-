@@ -37,13 +37,13 @@ $nome_aluno = isset($_SESSION["nome"]) ? $_SESSION["nome"] : "Aluno";
                     <a class="nav-link" href="../../index.php">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pages/student/student_postar_atividade.php">Publicar Tarefa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../config/validacao/logout.php">Sair</a>
                 </li>
             </ul>
         </div>
